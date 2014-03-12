@@ -1,0 +1,13 @@
+@(query: String, places: List[net.sf.sprockets.google.Place])
+@main("hubs"){
+	
+
+	<ul>
+		</span><h2>@query</h2>
+    	@for(place <- places){
+    		<li>
+    			<a href='#'>@place.getName</a>
+    		</li>
+		}
+	</ul>
+}
