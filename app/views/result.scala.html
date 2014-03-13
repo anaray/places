@@ -3,10 +3,10 @@
 	
 
 	<ul>
-		</span><h2>@query</h2>
+		</i><h2>@query</h2>
     	@for(place <- places){
     		<li>
-    			<a href='#'>@place.getName</a>
+    			<a href='http://maps.google.com/maps?q=loc:@place.getLatitude,@place.getLongitude'>@place.getName</a>
     		</li>
 		}
 	</ul>
