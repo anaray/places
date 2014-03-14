@@ -23,7 +23,8 @@ public class Application extends Controller {
     public static Result query() throws IOException{
 		String queryStr = Form.form().bindFromRequest().get("searchq");
 		if(queryStr != null && !queryStr.equals("")){
-       		net.sf.sprockets.google.Places.Response<List<Place>> resp;
+    		Sprockets.getConfig().setProperty("google.api-key", "");
+    		net.sf.sprockets.google.Places.Response<List<Place>> resp;
         	resp = Places.textSearch(new Places.Params().query(queryStr));
         	List<Place> places = resp.getResult();
     		return ok(result.render(queryStr,places));
